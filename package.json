@@ -1,5 +1,5 @@
 {
-  "name": "@example/starter",
+  "name": "solid-multi-frameworks",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -17,6 +17,8 @@
     "astro": "^0.20.5"
   },
   "dependencies": {
+    "@xstate/react": "^1.6.1",
+    "@xstate/vue": "^0.8.1",
     "xstate": "^4.23.4"
   }
 }

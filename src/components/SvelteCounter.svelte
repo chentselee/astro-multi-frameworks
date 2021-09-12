@@ -1,17 +1,9 @@
 <script>
-  let count = 0;
-
-  function add() {
-    count += 1;
-  }
-
-  function subtract() {
-    count -= 1;
-  }
+  import { counterService } from './counter.machine'
 </script>
 
 <div id="svelte" class="counter">
-  <button on:click={subtract}>-</button>
-  <pre>{ count }</pre>
-  <button on:click={add}>+</button>
+  <button on:click={() => counterService.send('DECREMENT')}>-</button>
+  <pre>{$counterService.context.count}</pre>
+  <button on:click={() => counterService.send('INCREMENT')}>+</button>
 </div>

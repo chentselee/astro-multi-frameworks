@@ -1,7 +1,7 @@
 ---
 import PreactCounter from '../components/PreactCounter.jsx';
 import ReactCounter from '../components/ReactCounter.jsx';
-import SolidCounter from '../components/SolidCounter.jsx';
+import SolidCounter from '../components/SolidCounter.jsx'
 import SvelteCounter from '../components/SvelteCounter.svelte';
 import VueCounter from '../components/VueCounter.vue';
 
@@ -27,17 +27,17 @@ let title = 'My Astro Site';
 </head>
 <body>
   <main>
-  <header>
-    <div>
-      <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
-      <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
-    </div>
-  </header>
-  <PreactCounter client:visible />
-  <ReactCounter client:visible />
-  <SolidCounter client:visible />
-  <SvelteCounter client:visible />
-  <VueCounter client:visible />
+    <header>
+      <div>
+        <img width="60" height="80" src="/assets/logo.svg" alt="Astro logo">
+        <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+      </div>
+    </header>
+    <ReactCounter client:visible />
+    <PreactCounter client:visible />
+    <SolidCounter client:visible />
+    <SvelteCounter client:visible />
+    <VueCounter client:visible />
   </main>
 </body>
 </html>
