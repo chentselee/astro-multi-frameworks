@@ -4,6 +4,7 @@ import ReactCounter from '../components/ReactCounter.jsx';
 import SolidCounter from '../components/SolidCounter.jsx'
 import SvelteCounter from '../components/SvelteCounter.svelte';
 import VueCounter from '../components/VueCounter.vue';
+import Title from '../components/Title.svelte'
 
 let title = 'My Astro Site';
 
@@ -23,6 +24,15 @@ let title = 'My Astro Site';
       gap: 1em;
       max-width: min(100%, 68ch);
     }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 1rem;
+      margin-block-start: 1rem;
+    }
+    .container > li {
+      list-style: none;
+    }
   </style>
 </head>
 <body>
@@ -33,11 +43,28 @@ let title = 'My Astro Site';
         <h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
       </div>
     </header>
-    <ReactCounter client:visible />
-    <PreactCounter client:visible />
-    <SolidCounter client:visible />
-    <SvelteCounter client:visible />
-    <VueCounter client:visible />
+    <ul class="container">
+      <li>
+        <Title title='React' color='blue' />
+        <ReactCounter client:visible />
+      </li>
+      <li>
+        <Title title='Preact' color='blue' />
+        <PreactCounter client:visible />
+      </li>
+      <li>
+        <Title title='Solid' color='lightblue' />
+        <SolidCounter client:visible />
+      </li>
+      <li>
+        <Title title='Svelte' color='orange' />
+        <SvelteCounter client:visible />
+      </li>
+      <li>
+        <Title title='Vue' color='green' />
+        <VueCounter client:visible />
+      </li>
+    </ul>
   </main>
 </body>
 </html>
