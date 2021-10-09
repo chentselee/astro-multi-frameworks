@@ -1,18 +1,21 @@
-import { counterService } from './counter.machine'
+import { counterService, counterMachine } from './counter.machine'
 import { useState, useEffect } from 'react'
+import { StateFrom } from 'xstate'
 
 export default function ReactCounter() {
-  const [count, setCount] = useState(0)
+  const [state, setState] = useState<StateFrom<typeof counterMachine>>(() => undefined)
   useEffect(() => {
     const subscription = counterService.subscribe((state) => {
-      setCount(state.context.count)
+      setState(state)
     })
     return subscription.unsubscribe
   }, [])
   return (
-    <div id='react' className='counter'>
+    <div id='react' class='counter'>
+      {/* @ts-expect-error */}
       <button onClick={() => counterService.send('DECREMENT')}>-</button>
-      <pre>{count}</pre>
+      <pre>{state?.context.count}</pre>
+      {/* @ts-expect-error */}
       <button onClick={() => counterService.send('INCREMENT')}>+</button>
     </div>
   )

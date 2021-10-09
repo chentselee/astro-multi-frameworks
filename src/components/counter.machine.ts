@@ -14,7 +14,7 @@ const counterModel = createModel(
   }
 )
 
-const counterMachine = counterModel.createMachine(
+export const counterMachine = counterModel.createMachine(
   {
     context: {
       count: 0,

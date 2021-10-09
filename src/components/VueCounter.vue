@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { useActor } from '@xstate/vue'
 import { counterService } from './counter.machine'
 export default {

@@ -14,6 +14,7 @@
     "@astrojs/renderer-solid": "^0.1.1",
     "@astrojs/renderer-svelte": "^0.1.2",
     "@astrojs/renderer-vue": "^0.1.8",
+    "@types/react": "^17.0.27",
     "astro": "^0.20.9",
     "typescript": "^4.4.3"
   },
